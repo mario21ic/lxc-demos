@@ -48,4 +48,6 @@ lxc exec mydev -- git --version
 lxc exec mydev -- cat /etc/timezone
 lxc exec mydev -- ls /tmp/
 lxc exec mydev -- cat /var/log/syslog
+lxc exec mydev -- cat /var/log/cloud-init.log |grep "git"
+
 
