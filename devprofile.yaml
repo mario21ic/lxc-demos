@@ -1,0 +1,25 @@
+config:
+  environment.TZ: ""
+  user.user-data: |
+    #cloud-config
+    package_upgrade: true
+    packages:
+      - git
+    locale: es_es.UTF-8
+    timezone: Europe/Madrid
+    runcmd:
+      - [touch, /tmp/mario_was_here]
+description: Default LXD profile
+devices:
+  eth0:
+    name: eth0
+    nictype: bridged
+    parent: lxdbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: devprofile
+used_by: []
+
