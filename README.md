@@ -44,10 +44,12 @@ lxc profile copy default devprofile
 lxc profile show devprofile
 lxc profile edit devprofile # like devprofile.yaml
 lxc launch --profile devprofile ubuntu:18.04 mydev
-lxc exec mydev -- git --version
 lxc exec mydev -- cat /etc/timezone
 lxc exec mydev -- ls /tmp/
+lxc exec mydev -- git --version
+lxc exec mydev -- nmap --version
 lxc exec mydev -- cat /var/log/syslog
 lxc exec mydev -- cat /var/log/cloud-init.log |grep "git"
+lxc exec mydev -- cat /var/log/cloud-init.log |grep "nmap"
 
 
