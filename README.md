@@ -144,3 +144,17 @@ Would you like stale cached images to be updated automatically? (yes/no) [defaul
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
 ```
 
+### UI ###
+```
+sudo lxc config set core.https_address 0.0.0.0:8443
+curl localhost:8443
+```
+Create admin user:
+```
+lxc auth identity create tls/lxd-ui --group admins
+```
+Copy generated token
+Open browser and generate certificate
+Import certificate into your SO or browser settings
+Finally put the generated token
+
